@@ -29,12 +29,7 @@ Rails.application.routes.draw do
     end  
   end  
   
-  resources :items, only: [:index, :show] do
-    collection do
-      get 'top'
-      get 'about'
-    end  
-  end  
+  resources :items, only: [:index, :show] 
   
   resources :cart_items, only: [:index, :update, :create, :destroy] do
     collection do
