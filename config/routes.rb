@@ -12,6 +12,7 @@ Rails.application.routes.draw do
  }
  
   root 'items#top'
+  get '/about',to: 'items#about' 
   
   namespace :admin do
     resources :items, except: [:destroy]
