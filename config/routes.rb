@@ -12,6 +12,7 @@ Rails.application.routes.draw do
  }
  
   root 'items#top'
+  get '/about',to: 'items#about' 
   
   namespace :admin do
     resources :items, except: [:destroy]
@@ -29,12 +30,7 @@ Rails.application.routes.draw do
     end  
   end  
   
-  resources :items, only: [:index, :show] do
-    collection do
-      get 'top'
-      get 'about'
-    end  
-  end  
+  resources :items, only: [:index, :show] 
   
   resources :cart_items, only: [:index, :update, :create, :destroy] do
     collection do
