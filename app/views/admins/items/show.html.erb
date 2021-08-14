@@ -22,10 +22,10 @@
       <td><%= @item.price %></td>
     </tr>
     <tr>
-      <% if @item.is_active == 1 %>
+      <% if @item.is_active == true %>
       <td>販売ステータス</td>
       <td style="color:green;">販売中</td>
-      <% elsif @item.is_active == 0 %>
+      <% elsif @item.is_active == false %>
       <td>販売ステータス</td>
       <td style="color:gray;">販売停止中</td>
       <% end %>
@@ -33,5 +33,5 @@
   </table>
 </div>
 <div>
-  <%= link_to "　編集する　", edit_admins_item_path(@item),class:"btn btn-success"%>
+  <%= link_to "編集する", edit_admins_item_path(@item),class:"btn btn-success"%>
 </div>
