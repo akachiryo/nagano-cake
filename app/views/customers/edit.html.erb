@@ -28,7 +28,7 @@
         <%= f.telephone_field :phone_number, autofocus: true %>
       </div>
 
-      <div class="field">
+      <div class="form-group">
         <%= f.label :メールアドレス %><br />
         <%= f.email_field :email, autofocus: true %>
       </div>
@@ -36,4 +36,4 @@
       <%= f.submit "編集内容を保存", class: "btn btn-success" %>
     <% end %>
 
-    <%= link_to "退会する", unsubscribe_customer_path(@customer), class: "btn btn-danger" %>
+    <%= link_to "退会する", unsubscribe_customer_path, class: "btn btn-danger" %>
