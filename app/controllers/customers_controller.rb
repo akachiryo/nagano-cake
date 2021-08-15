@@ -4,15 +4,13 @@ class CustomersController < ApplicationController
   end
 
   def edit
-<<<<<<< HEAD
-      
+    @customer = current_customer
   end      
   
   
   
-=======
-    @customer = current_customer
-  end
+    
+
 
   def update
     @customer = current_customer
@@ -39,5 +37,4 @@ class CustomersController < ApplicationController
       params.require(:customer).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :postcode, :address, :phone_number, :email, :is_deleted)
     end
 
->>>>>>> customer
 end

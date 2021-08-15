@@ -12,13 +12,8 @@ Rails.application.routes.draw do
  }
 
   root 'items#top'
-<<<<<<< HEAD
-  get '/about',to: 'items#about' 
-  
-=======
   get '/about',to: 'items#about'
 
->>>>>>> customer
   namespace :admins do
     resources :items, except: [:destroy]
     resources :genres, only: [:index, :create, :edit, :update]
