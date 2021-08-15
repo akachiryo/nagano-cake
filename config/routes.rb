@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   end
 
   #customer
-  scope module: :public do
+
     resources :customers, only: [:show, :edit, :update] do
       member do
         get 'unsubscribe'
@@ -45,6 +45,6 @@ Rails.application.routes.draw do
         get 'complete'
       end
     end
-  end
+
     resources :addresses, except: [:show, :new]
 end
