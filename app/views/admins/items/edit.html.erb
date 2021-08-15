@@ -1,5 +1,5 @@
 <h2>商品編集</h2>
-<%= form_with(model: @item,url: admins_item_path(@item.id), local: true)  do |f| %>
+<%= form_with(model: @item,url: admins_item_path(@item), local: true)  do |f| %>
    <div class="form-group">
     <%= f.label :image, "商品画像" %>
     <%= f.attachment_field :image %>
@@ -17,13 +17,12 @@
   
   <div class="form-group">
      <%= f.label:genres, "ジャンル" %>
-     <!--%= f.collection_select(:genre_id, @genres, :id, :name) %></div>-->
+     <%= f.collection_select(:genre_id, @genres, :id, :name) %></div>
    </div>
   
   <div class="form-group">
      <%=f.label :price, "税抜価格" %>
      <%= f.text_field :price %><span>円</span>
-     <!--税込価格追加-->
   </div>
   
 
