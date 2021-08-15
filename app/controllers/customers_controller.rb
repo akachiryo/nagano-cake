@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-  before_action :authenticate_customer!
+  #before_action :authenticate_customer!
   before_action :ensure_correct_user
 
   def show
@@ -38,7 +38,7 @@ class CustomersController < ApplicationController
     def ensure_correct_user
       @customer = Customer.find(params[:id])
       if @customer != current_customer
-        redirect_to root _path
+        redirect_to root_path
       end
     end
 end

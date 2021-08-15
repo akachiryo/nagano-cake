@@ -1,5 +1,5 @@
 class Admins::CustomersController < ApplicationController
-  before_action :authenticate_admin!
+
 
   def index
      @customers = Customer.page(params[:page]).reverse_order
@@ -16,7 +16,7 @@ class Admins::CustomersController < ApplicationController
   def update
     @customer = Customer.find(params[:id])
     if @customer.update(customer_params)
-      redirect_to admin_customer_path(@customer.id), notice: "会員情報を更新しました"
+      redirect_to admins_customer_path(@customer), notice: '会員情報を更新しました。'
     else
       render :edit
     end
@@ -24,7 +24,7 @@ class Admins::CustomersController < ApplicationController
 
   private
 
-  def cutomer_params
+  def customer_params
     params.require(:customer).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :postcode, :address, :phone_number, :email, :is_deleted)
   end
 
