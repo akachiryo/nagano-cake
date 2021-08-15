@@ -9,6 +9,7 @@ class AddressesController < ApplicationController
     if @address.save
       redirect_to request.referer
     else
+      #@address_new = Address.new
       @addresses = current_customer.addresses
       render :index
     end
@@ -21,7 +22,7 @@ class AddressesController < ApplicationController
   def update
     @address = Address.find(params[:id])
     if @address.update(address_params)
-      redirect_to request.referer
+      redirect_to addresses_path
     else
       render :edit
     end
