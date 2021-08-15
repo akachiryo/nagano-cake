@@ -14,12 +14,12 @@
     </tr>
     <tr>
       <td>ジャンル</td>
-      <td></td>
-      <!--@item.genre.name %>-->
+      <td><%= @item.genre.name %></td>
     </tr>
     <tr>
-      <td>税抜価格</td>
-      <td><%= @item.price %></td>
+      <td>税込価格<br>(税抜価格)</td>
+      <td><%= @item.price %>(<%= @item.add_tax_price.to_s(:delimited) %>)円</td>
+       
     </tr>
     <tr>
       <% if @item.is_active == true %>
