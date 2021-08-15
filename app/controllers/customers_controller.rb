@@ -1,29 +1,30 @@
 class CustomersController < ApplicationController
   before_action :authenticate_customer!
+  before_action :ensure_correct_user
 
   def show
-    @customer = Customer.find(params[:id])
+
   end
 
   def edit
-    @customer = Customer.find(params[:id])
+
   end
 
   def update
-    @customer = Customer.find(params[:id])
+
     if @customer.update(customer_params)
-      redirect_to customer_path(current_customer)
+      redirect_to customer_path(current_customer), notice: "会員情報を更新しました"
     else
       render :edit
     end
   end
 
   def unsubscribe
-    @customer = Customer.find(params[:id])
+
   end
 
   def withdraw
-    @customer = Customer.find(params[:id])
+
     @customer.update(is_deleted: true)
     reset_session
     redirect_to root_path

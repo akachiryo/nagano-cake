@@ -11,19 +11,19 @@
       </tr>
       <tr>
           <td>フリガナ</td><td><%= @customer.last_name_kana %><%= @customer.first_name_kana %></td>
-      </tr>  
+      </tr>
       <tr>
           <td>郵便番号</td><td><%= @customer.postcode %></td>
       </tr>
       <tr>
           <td>住所</td><td><%= @customer.address %></td>
-      </tr>    
+      </tr>
       <tr>
           <td>電話番号</td><td><%= @customer.phone_number %></td>
       </tr>
       <tr>
           <td>メールアドレス</td><td><%= @customer.email %></td>
-      </tr>  
+      </tr>
       <tr>
         <td><% if @customer.is_deleted == true%>
              <p class="text-secondary">退会</p>
@@ -36,4 +36,4 @@
 </table>
 
 <%= link_to '編集する', edit_admins_customer_path(@customer.id),class: 'btn btn-success' %>
-<%= link_to '注文履歴一覧する',admins_orders_path,class: 'btn btn-danger' %>
+<%= link_to '注文履歴一覧を見る',admins_orders_path,class: 'btn btn-danger' %>
