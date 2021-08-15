@@ -7,6 +7,13 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
+              <% if admin_signed_in? %>
+              <li class="nav-item"> <%= link_to "ログアウト（管理者用）", destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' %></li>
+              <li class="nav-item"> <%= link_to "新規商品登録", new_admins_item_path,  class: 'nav-link text-dark' %></li>
+              
+              <% else %>
+              <li class="nav-item"><%= link_to "ログイン（管理者用）", new_admin_session_path, class: 'nav-link text-dark' %></li>
+              <% end %>
               <% if customer_signed_in? %>
               <li class="nav-item"><%= link_to 'マイページ',customer_path(current_customer), class: 'nav-link text-dark' %></li>
               <li class="nav-item"><%= link_to '商品一覧',items_path, class: 'nav-link text-dark' %></li>
