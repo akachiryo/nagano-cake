@@ -7,7 +7,7 @@ class AddColumnToCustomers < ActiveRecord::Migration[5.2]
     add_column :customers, :postcode, :string
     add_column :customers, :address, :string
     add_column :customers, :phone_number, :string
-    add_column :customers, :is_deleted, :string
-   
+    add_column :customers, :is_deleted, :string, default: false
+
   end
 end
