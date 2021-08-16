@@ -1,8 +1,12 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def after_sign_out_path_for(resource)
-    new_admin_session_path # ログアウト後に遷移するpathを設定
+  def after_sign_out_path_for(resource_or_scope)   #アドミのログアウト後はアドミのログインへ
+    if resource_or_scope == :admin
+        new_admin_session_path
+    else
+        root_path　　　　　　　　　　　　　　　　　#アドミ以外（会員）のログアウト後はルートへ
+    end
   end
 
   protected
