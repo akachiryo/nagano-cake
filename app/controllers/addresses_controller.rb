@@ -5,11 +5,12 @@ class AddressesController < ApplicationController
   end
 
   def create
-    @address = current_customer.addresses.new(address_params)
+    @address = Address.new(address_params)
+    @address.customer_id = current_customer.id
     if @address.save
       redirect_to request.referer
     else
-      #@address_new = Address.new
+      @address_new = Address.new
       @addresses = current_customer.addresses
       render :index
     end
