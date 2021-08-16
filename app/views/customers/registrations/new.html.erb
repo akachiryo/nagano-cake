@@ -40,7 +40,7 @@
 
         <div class="row mt-3">
           <%= f.label :パスワード（6文字以上）, class:"col-3" %>
-          <%= f.password_field :password, class:"col-2", placeholder:"6文字以上", autocomplete: "new-password" %>
+          <%= f.password_field :password, class:"col-2", autocomplete: "new-password" %>
         </div>
 
         <div class="row mt-3">
@@ -55,7 +55,11 @@
       <% end %>
 
 
-      <p>既に登録済の方</p>
-      <%= render "customers/shared/links" %>
+      <div class="mt-5">
+        <span class="fs-3 fst-italic offset-md-1 bg-light">既に登録済の方</span>
+      </div>
 
+      <div class="offset-1 mt-3">
+        <%= link_to "こちら", new_customer_session_path %>　からログインしてください.
+      </div>
 </div>
