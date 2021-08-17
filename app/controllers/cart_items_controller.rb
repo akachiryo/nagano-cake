@@ -21,7 +21,22 @@ end
  
 def index
  @cart_items= current_customer.cart_items.all    
+ @total = @cart_items.inject(0) { |sum, item| sum + item.sum_of_price }
+ @cart_item=CartItem.new
 end
+
+
+
+def update
+   @cart_item.amount = 0
+    if @cart_item.update(amount: params[:amount].to_i)
+      flash[:notice] = 'カート内のギフトが更新されました'
+    else
+      flash[:alert] = 'カート内のギフトの更新に失敗しました'
+    end
+    redirect_to cart_items_path
+end
+
 
 
 private
