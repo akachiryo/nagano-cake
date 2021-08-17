@@ -1,6 +1,6 @@
 class AddressesController < ApplicationController
   def index
-    @addresses = current_customer.addresses
+    @addresses = current_customer.addresses.order(created_at: :DESC)
     @address = Address.new
   end
 
