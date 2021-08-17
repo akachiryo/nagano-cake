@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_14_165704) do
+ActiveRecord::Schema.define(version: 2021_08_15_061649) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 2021_08_14_165704) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "amount"
+    t.integer "customer_id"
+    t.integer "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_cart_items_on_customer_id"
+    t.index ["item_id"], name: "index_cart_items_on_item_id"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -50,7 +60,7 @@ ActiveRecord::Schema.define(version: 2021_08_14_165704) do
     t.string "image_id", null: false
     t.text "introduction", null: false
     t.integer "price", null: false
-    t.boolean "is_active", null: false
+    t.boolean "is_active", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["genre_id"], name: "index_items_on_genre_id"
