@@ -38,6 +38,12 @@ def update
     redirect_to cart_items_path
 end
 
+def destroy
+  @cart_item.destroy
+  redirect_to cart_items_path
+end
+
+
 
 
 private
