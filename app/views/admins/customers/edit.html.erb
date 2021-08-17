@@ -1,50 +1,49 @@
-<h3><%= @customer.last_name + @customer.first_name %>さんの会員情報編集</h3>
-
-<%= form_with model: @customer, local: true do |f| %>
-  <div class="form-group">
-    <%= f.label :会員ID %>
-    <%= @customer.id %>
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <p class="fs-5 bg-light text-center" valign="middle"><%= @customer.last_name + @customer.first_name %>さんの会員情報編集</p>
+      
+      <%= form_with model: @customer, local: true do |f| %>
+      <div class="row lh-lg">
+        <p class="col-2">会員ID</p>
+        <p class="col-3"><%= @customer.id %></p>
+      </div>
+      <div class="row lh-lg">
+        <p class="col-2">氏名</p>
+        <p class="col-3"><%= f.text_field :last_name,:size=>"30", autofocus: true %></p>
+        <p class="col-3"><%= f.text_field :first_name,:size=>"30" %></p>
+      </div>
+      <div class="row lh-lg">
+        <p class="col-2">フリガナ</p>
+        <p class="col-3"><%= f.text_field :last_name_kana,:size=>"30" %></p>
+        <p class="col-3"><%= f.text_field :first_name_kana,:size=>"30" %></p>
+      </div>
+      <div class="row lh-lg">
+        <p class="col-2">郵便番号</p>
+        <p class="col-3"><%= f.text_field :postcode,:size=>"30" %></p>
+      </div>
+      <div class="row lh-lg">
+        <p class="col-2">住所</p>
+        <p class="col-3"><%= f.text_field :addresse,:size=>"100" %></p>
+      </div>
+      <div class="row lh-lg">
+        <p class="col-2">電話番号</p>
+        <p class="col-3"><%= f.telephone_field :phone_number,:size=>"30" %></p>
+      </div>
+      <div class="row lh-lg">
+        <p class="col-2">メールアドレス</p>
+        <p class="col-3"><%= f.email_field :email,:size=>"30" %></p>
+      </div>
+      <div class="row lh-lg">
+        <p class="col-2">会員ステータス</p>
+        <p class="col-1"><%= f.radio_button :is_deleted, false %><%= f.label :is_deleted, "有効" %></p>
+        <p class="col-1"><%= f.radio_button :is_deleted, true %><%= f.label :is_deleted, "退会" %></p>
+      </div>
+      <div class="row lh-lg mt-3">
+        <p class="col-2"></p>
+        <p class="col-2"><%= f.submit "変更を保存", class: "btn btn-success px-3 py-2" %></p>
+      </div>
+      <% end %>
+    </div>
   </div>
-
-  <div class="form-group">
-    <%= f.label :氏名 %>
-    <%= f.text_field :last_name, autofocus: true %>
-    <%= f.text_field :first_name, autofocus: true %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :フリガナ %>
-    <%= f.text_field :last_name_kana, autofocus: true %>
-    <%= f.text_field :first_name_kana, autofocus: true %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :郵便番号 %>
-    <%= f.text_field :postcode, autofocus: true %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :住所 %>
-    <%= f.text_field :address, autofocus: true %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :電話番号 %>
-    <%= f.telephone_field :phone_number, autofocus: true %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :メールアドレス %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :会員ステータス %><br />
-    <%= f.radio_button :is_deleted, false %>
-    <%= f.label :is_deleted, "有効" %>
-    <%= f.radio_button :is_deleted, true %>
-    <%= f.label :is_deleted, "退会" %>
-  </div>
-
-  <%= f.submit "変更を保存", class: "btn btn-success" %>
-<% end %>
+</div>
