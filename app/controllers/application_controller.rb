@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource_or_scope)
     #アドミのログアウト後はアドミのログインへ
     if resource_or_scope == :admin
-        new_admin_session_path
+      new_admin_session_path
     else
         root_path
         #アドミ以外（会員）のログアウト後はルートへ

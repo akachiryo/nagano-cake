@@ -28,7 +28,9 @@ end
 
 
 def update
-    if @cart_item.update(amount: params[:amount].to_i)
+  @cart_item = CartItem.find(params[:id])
+    if @cart_item.update(params_cart_item)
+      
       flash[:notice] = 'カート内のギフトが更新されました'
     else
       flash[:alert] = 'カート内のギフトの更新に失敗しました'
