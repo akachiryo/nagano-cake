@@ -28,7 +28,6 @@ end
 
 
 def update
-   @cart_item.amount = 0
     if @cart_item.update(amount: params[:amount].to_i)
       flash[:notice] = 'カート内のギフトが更新されました'
     else
