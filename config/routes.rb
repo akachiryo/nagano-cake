@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   passwords:     'customers/passwords',
   registrations: 'customers/registrations'
  }
+
   devise_for :admins, controllers: {
   sessions:      'admins/sessions',
   passwords:     'admins/passwords',
@@ -24,8 +25,8 @@ Rails.application.routes.draw do
 
   #customer
 
-    resources :customers, only: [:show, :edit, :update] do
-      member do
+    resource :customer, only: [:show, :edit, :update] do
+      collection do
         get 'unsubscribe'
         patch 'withdraw'
       end
