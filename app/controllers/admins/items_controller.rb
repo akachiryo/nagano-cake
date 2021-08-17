@@ -9,6 +9,9 @@ class Admins::ItemsController < ApplicationController
   def new
     @item = Item.new
     @genres = Genre.all
+    
+    if @genres = Genre.all
+  else
   end
   
   def show
