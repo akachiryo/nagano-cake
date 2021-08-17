@@ -21,7 +21,35 @@ end
  
 def index
  @cart_items= current_customer.cart_items.all    
+ @total = @cart_items.inject(0) { |sum, item| sum + item.sum_of_price }
+ @cart_item=CartItem.new
 end
+
+
+
+def update
+  @cart_item = CartItem.find(params[:id])
+    if @cart_item.update(params_cart_item)
+      
+      flash[:notice] = 'カート内のギフトが更新されました'
+    else
+      flash[:alert] = 'カート内のギフトの更新に失敗しました'
+    end
+    redirect_to cart_items_path
+end
+
+def destroy
+  @cart_item = CartItem.find(params[:id])
+  @cart_item.destroy
+  redirect_to cart_items_path
+end
+
+def destroy_all
+  @cart_items=current_customer.cart_items
+  @cart_items.destroy_all
+  redirect_to cart_items_path
+end
+
 
 
 private
