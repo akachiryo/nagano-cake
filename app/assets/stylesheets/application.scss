@@ -17,6 +17,8 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+
 
 header{
   height: 100px;
@@ -54,6 +56,7 @@ li {
   font-size: 13px;
 }
 
+
 .item_new{
   display:flex;
   flex-wrap:wrap;
@@ -80,3 +83,16 @@ li {
   margin:10px;
 }
 
+
+
+.sample-image {
+  height: 400px;
+  width :100%;
+}
+
+.top-bg {
+  background-image: image-url("ec1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
