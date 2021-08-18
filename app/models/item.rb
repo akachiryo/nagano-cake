@@ -6,5 +6,12 @@ class Item < ApplicationRecord
   def add_tax_price
    (self.price / 1.08).round
   end
- 
+  
+  def self.search_for(content, method)
+    if method == "perfect"
+      Item.where(name: content)
+    else
+      Item.where("name LIKE ?", "%" + content + "%")
+    end
+  end
 end

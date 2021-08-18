@@ -48,4 +48,6 @@ Rails.application.routes.draw do
     end
 
     resources :addresses, except: [:show, :new]
+    
+    get '/search', to: 'searches#search'
 end
