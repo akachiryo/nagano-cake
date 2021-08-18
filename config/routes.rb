@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'homes/top'
-  get 'homes/about'
  devise_for :customers, controllers: {
   sessions:      'customers/sessions',
   passwords:     'customers/passwords',
@@ -53,5 +51,7 @@ Rails.application.routes.draw do
     end
 
     resources :addresses, except: [:show, :new]
+    
+    get '/search', to: 'searches#search'
 
 end

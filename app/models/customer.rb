@@ -19,5 +19,25 @@ class Customer < ApplicationRecord
     super && (self.is_deleted == false)
   end
 
-
+  def self.search_for(content, method)
+    if method == "perfect"
+      @customer_kana = Customer.find_by_sql(['select *,last_name_kana || first_name_kana as full_name from customers where full_name LIKE ?', content])
+      if @customer_kana.count == 0
+        Customer.find_by_sql(['select *,last_name || first_name as full_name from customers where full_name LIKE ?', content])
+      else
+        Customer.find_by_sql(['select *,last_name_kana || first_name_kana as full_name from customers where full_name LIKE ?', content])
+      end
+    else
+      @customer_kana = Customer.where("first_name_kana || last_name_kana LIKE ?","%" + content + "%")
+      if @customer_kana.count == 0
+        Customer.where("first_name || last_name LIKE ?","%" + content + "%")
+      else
+        @customer = Customer.where("first_name_kana || last_name_kana LIKE ?","%" + content + "%")
+      end
+    end
+  end
 end
+
+
+
+
