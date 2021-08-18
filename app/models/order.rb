@@ -4,7 +4,8 @@ class Order < ApplicationRecord
   has_many :order_details, dependent: :destroy
   has_many :items, through: :order_detail
   
-  enum payment: { クレジットカード: 1, 銀行振込: 0 }
+  enum payment: { credit: 0, bank: 1 }
+  
 
   enum order_status: {
     入金待ち:0,
