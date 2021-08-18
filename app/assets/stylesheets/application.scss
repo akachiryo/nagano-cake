@@ -47,3 +47,15 @@
 
 
 
+.sample-image {
+  height: 500px;
+  width :100%;
+  margin-top: 50px;
+}
+
+.top-bg {
+  background-image: image-url("ec1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
