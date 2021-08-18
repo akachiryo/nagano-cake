@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'homes/top'
+  get 'homes/about'
  devise_for :customers, controllers: {
   sessions:      'customers/sessions',
   passwords:     'customers/passwords',
@@ -14,6 +16,9 @@ Rails.application.routes.draw do
 
   root 'items#top'
   get '/about',to: 'items#about'
+
+  get 'homes/top', to: 'homes#top'
+  get 'homes/about', to: 'homes#about'
 
   namespace :admins do
     resources :items, except: [:destroy]
