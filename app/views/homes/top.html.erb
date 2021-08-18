@@ -13,8 +13,12 @@
       </div>
 
       <div class="text-center">
-        <h4 class="new-item">新着商品</h4>
-        <%= link_to '全ての商品を見る>',items_path %>
+        <div class="item-link">
+          <%= link_to items_path do %>
+            <i class="fas fa-running"></i>商品ページへ
+          <% end %>
+        </div>
+        <span class="new-item">新着商品</span>
       </div>
 
       <div class="item-image-slide">
