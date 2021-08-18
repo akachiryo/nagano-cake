@@ -12,6 +12,11 @@
         </p>
       </div>
 
+      <div class="text-center">
+        <h4 class="new-item">新着商品</h4>
+        <%= link_to '全ての商品を見る>',items_path %>
+      </div>
+
       <div class="item-image-slide">
         <% @items.each do |item| %>
           <div class="slide-item">
@@ -22,8 +27,7 @@
 
 
 
-      <p class="new-item my-3">新着商品</p>
-      <%= link_to '全ての商品を見る>',items_path %>
+
 
 
   </div>

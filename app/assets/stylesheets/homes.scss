@@ -4,25 +4,33 @@
 
 .message-content {
   position: relative;
-  background: #dfefff;
-  box-shadow: 0px 0px 0px 5px #dfefff;
-  border: dashed 2px white;
-  padding: 0.2em 0.5em;
-  color: #454545;
-  line-height: 1.7;
+  padding: 0.25em 1em;
+  border: solid 2px black;
+  border-radius: 3px 0 3px 0;
+  line-height : 1.8;
+}
+
+.message-content:before, .message-content:after {
+  content: '';
+  position: absolute;
+  width:10px;
+  height: 10px;
+  border: solid 2px black;
+  border-radius: 50%;
 }
 
 .message-content:after {
-  position: absolute;
-  content: '';
-  left: -7px;
-  top: -7px;
-  border-width: 0 0 15px 15px;
-  border-style: solid;
-  border-color: #fff #fff #a8d4ff;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  top:-12px;
+  left:-12px;
+}
+
+.message-content:before {
+  bottom:-12px;
+  right:-12px;
 }
 
 .new-item {
-  font-size: 20px;
+
+  font-family: 'Quicksand', sans-serif;
 }
+
