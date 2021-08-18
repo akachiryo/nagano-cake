@@ -13,7 +13,11 @@ end
 
 def confirm
   @order=Order.new(order_params)
-  @cart_items= current_customer.cart_items.all  
+  @cart_items= CartItem.all  
+  @cart_item=CartItem.new
+  @order.shipping_cost ="800"
+  @total = @cart_items.inject(0) { |sum, item| sum + item.sum_of_price }
+ 
 end
 
 def complete

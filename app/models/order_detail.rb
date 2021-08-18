@@ -10,4 +10,5 @@ enum making_status: {
   製作完了: 3
 }   
     
+    
 end
