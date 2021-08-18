@@ -18,6 +18,41 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+header{
+  height: 100px;
+	background-image: image-url("cake_2_black.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+.header-nav {
+  display: none;
+}
+
+@media screen and (max-width: 765px) {
+  .header-nav {
+    display: inline-block;
+  }
+  
+  .nav-left {
+    display: none;
+  }
+}
+
+footer{
+  height: 100px;
+	background-image: image-url("cake_2_black.jpg");
+	background-size: cover;
+	background-position: bottom;
+}
+
+li {
+  list-style: none;
+}
+
+.footer-bottom{
+  font-size: 13px;
+}
 
 .item_new{
   display:flex;
