@@ -2,8 +2,7 @@ class OrdersController < ApplicationController
     
 def new
 @order = Order.new
-@customer = Customer.find(current_customer.id)
-@addresses = @customer.addresses
+
 end
 
 
