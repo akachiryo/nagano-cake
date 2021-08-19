@@ -26,15 +26,15 @@
         <td>
           <%= order.created_at.strftime('%Y/%m/%d') %>
         </td>
-        <td><%= order.postal_code %><%= order.address %><%= order.name %></td>
-        
+        <td>〒<%= order.postal_code %><%= order.address %><%= order.name %></td>
         <td>
-              
+            <% order.order_details.each do |order_detail| %>  
+             <%= order_detail.item.name %>
+            <% end %>
         </td>
-          
-        <td>
-            
-        </td>
+        <td><%= order.total_payyment %></td>
+        <td><%= order.status %></td>
+        <td><%= link_to "表示する", order_path(order), class: "btn btn-success btn-sm offset-1" %></td>
        
       </tr>
     <% end %>

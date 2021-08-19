@@ -17,20 +17,27 @@ end
 
 def create 
  @order = current_customer.orders.new(order_params)
- @order.save
- redirect_to completeorders_path
+ @cart_items = CartItem.where(customer.id:current_customer.id)
+ if @order.save
+ redirect_to complete_orders_path
+ else
+ render 'new'
+ end
 end
 
 def complete
   cart_items = current_customer.cart_items
-	cart_items.destroy_all
+  cart_items.destroy_all
 end
 
 def index
-  @orders = current_customer.orders
+  @orders = current_customer.orders.all
+ 
+  
 end
 
 def show
+ @order=Order.find(params[:id])    
 end
 
 
