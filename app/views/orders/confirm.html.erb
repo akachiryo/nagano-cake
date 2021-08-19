@@ -5,6 +5,7 @@
       
       
   </div>
+  
   <div class='col-md-11 offset-md-1'>
     <h3>注文情報確認</h3>
      
@@ -46,8 +47,8 @@
   </tr>
   
   <tr><td>送料</td><td>¥<%= @order.shipping_cost %></td></tr>
-  <tr><td>商品合計</td><td>¥</td></tr>
-  <tr><td>請求金額</td><td></td></tr>
-  
+  <tr><td>商品合計</td><td>¥ <%= @total.round.to_s(:delimited) %></td></tr>
+  <tr><td>請求金額</td><td><%= @total + @order.shipping_cost %> </td></tr>
+   <%= link_to "注文を確定する", complete_orders_path, class: "btn btn-success btn-sm offset-1" %>
   </div>
 </div>

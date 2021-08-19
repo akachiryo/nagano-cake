@@ -6,10 +6,6 @@ def new
 @addresses = @customer.addresses
 end
 
-def create 
- 
-  @order = Order.new(order_params)
-end
 
 def confirm
   @order=Order.new(order_params)
@@ -17,12 +13,25 @@ def confirm
   @cart_item=CartItem.new
   @order.shipping_cost ="800"
   @total = @cart_items.inject(0) { |sum, item| sum + item.sum_of_price }
- 
+end
+
+def create 
+ @order = current_customer.orders.new(order_params)
+ @order.save
+ redirect_to completeorders_path
 end
 
 def complete
+  cart_items = current_customer.cart_items
+	cart_items.destroy_all
 end
 
+def index
+  @orders = current_customer.orders
+end
+
+def show
+end
 
 
 private
