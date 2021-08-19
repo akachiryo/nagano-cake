@@ -19,8 +19,19 @@ end
 
 def create 
  @order = Order.new(order_params)
+ @order_detail=OrderDetail.new
+ @order_detail.order_id=@order.id
+
+ 
+ @order.items.each do |item|
+     @order_detail.item_id=item.id
+     @order_detail.amount=item.cart_items.amount
+     @order_detail.price=item.price*item.cart_items.amount
+  end   
+  
  @cart_items = CartItem.where(customer_id:current_customer.id)
  if @order.save
+    @order_detail
  redirect_to complete_orders_path
  else
  render 'new'
@@ -33,11 +44,15 @@ def complete
 end
 
 def index
-  @orders = current_customer.orders.all
+  @orders = current_customer.orders
+  @cart_items= CartItem.all  
+ 
 end
 
 def show
+ @order_details=OrderDetail.all    
  @order=Order.find(params[:id])    
+ 
 end
 
 

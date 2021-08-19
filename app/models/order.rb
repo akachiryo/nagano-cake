@@ -17,6 +17,5 @@ enum payment_method: {
 }
 
 
-
     
 end

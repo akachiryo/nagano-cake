@@ -17,14 +17,7 @@ class ItemsController < ApplicationController
  
   end
   
-  def genre_search
-    #検索結果画面でもタグ一覧表示
-    @genres=Genre.all
-　　　　　　　#検索されたタグを受け取る
-    @genre=Genre.find(params[:genre_id])
-　　　　　　　　#検索されたタグに紐づく投稿を表示
-    @items=@genre.items.page(params[:page]).per(10)
-  end
+ 
   
  
   
