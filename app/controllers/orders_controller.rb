@@ -11,12 +11,14 @@ def confirm
   @order=Order.new(order_params)
   @cart_items= CartItem.all  
   @cart_item=CartItem.new
+  @order.customer_id=current_customer.id
   @order.shipping_cost ="800"
-  @total = @cart_items.inject(0) { |sum, item| sum + item.sum_of_price }
+  @total_payment = @cart_items.inject(0) { |sum, item| sum + item.sum_of_price }
+  
 end
 
 def create 
- @order = current_customer.orders.new(order_params)
+ @order = Order.new
  @cart_items = CartItem.where(customer.id:current_customer.id)
  if @order.save
  redirect_to complete_orders_path
