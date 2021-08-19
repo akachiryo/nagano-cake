@@ -1,3 +1,5 @@
+
+
 .top-message, .new-item, .about-text {
   font-family: 'Quicksand', sans-serif;
 }
@@ -58,5 +60,12 @@
   text-decoration: none;
   color: black;
   background: linear-gradient(transparent 70%, #ff006f 70%);
+}
+
+.about-text {
+  color: #fff;
+  margin-top: 20px;
+  line-height: 1.7;
+  font-size: 1.1rem;
 }
 

@@ -35,7 +35,7 @@ header{
   .header-nav {
     display: inline-block;
   }
-  
+
   .nav-left {
     display: none;
   }
@@ -83,8 +83,6 @@ li {
   margin:10px;
 }
 
-
-
 .sample-image {
   height: 400px;
   width :100%;
@@ -95,4 +93,11 @@ li {
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
+}
+.main-visual {
+  background-image: image-url("cake_shop.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 500px;
+
 }
