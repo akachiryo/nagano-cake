@@ -3,6 +3,10 @@ class Customer < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+         
+  has_many :addresses, dependent: :destroy
+  has_many :cart_items, dependent: :destroy
+  has_many :orders, dependent: :destroy
 
   validates :last_name, presence: true
   validates :first_name, presence: true
@@ -12,13 +16,19 @@ class Customer < ApplicationRecord
   validates :address, presence: true
   validates :phone_number, presence: true, format: { with: /\A\d{10,11}\z/ } #電話番号ハイフンなし10・11桁
 
-  has_many :addresses, dependent: :destroy
-  has_many :cart_items, dependent: :destroy
-  has_many :orders, dependent: :destroy
+  
 
   def active_for_authentication?
     super && (self.is_deleted == false)
   end
+  
+  
+  def full_name
+    self.last_name + self.first_name
+  end
+  
+  scope :full_name, -> { self.last_name + self.first_name }
+  
 
   def self.search_for(content, method)
     if method == "perfect"

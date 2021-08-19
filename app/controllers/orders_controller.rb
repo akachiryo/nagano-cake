@@ -7,47 +7,29 @@ end
 
 def confirm
   @order = Order.new(order_params)
-  @curt_item = current_customer.curt_items
+  @cart_items = current_customer.cart_items
   @order.customer_id = current_customer.id
-  if @order.address == 0
-    @order.postal_code = current_customer.postcode
-    @order.address = current_customer.address
-  elsif @order.address == 1
-  elsif @order.address == 2
-  end
-    
   @order.shipping_cost = 800
-  @order.total_payment = shipping_cost + 
-  
-  
-  
-  
-  @cart_items= CartItem.all  
-  @cart_item=CartItem.new
-  @order.customer_id=current_customer.id
-  @order.shipping_cost ="800"
-  @total_payment = @cart_items.inject(0) { |sum, item| sum + item.sum_of_price }
-  
+  @total_payment = @order.shipping_cost + @cart_items.items_of_price
+  @registered_address = Address.where(id: current_customer.id)
 end
 
 def create 
  @order = Order.new(order_params)
- @order_detail=OrderDetail.new
- @order_detail.order_id=@order.id
-
- 
- @order.items.each do |item|
-     @order_detail.item_id=item.id
-     @order_detail.amount=item.cart_items.amount
-     @order_detail.price=item.price*item.cart_items.amount
-  end   
-  
- @cart_items = CartItem.where(customer_id:current_customer.id)
+ @cart_items = current_customer.cart_items
  if @order.save
-    @order_detail
- redirect_to complete_orders_path
+   @cart_items.each do |cart_item|
+     @order_detail = OrderDetail.new
+     @order_detail.order_id = @order.id
+     @order_detail.item_id = cart_item.item.id
+     @order_detail.amount = cart_item.amount
+     @order_detail.price = cart_item.amount * cart_item.item.price
+     @order_detail.save
+   end
+   @cart_items.destroy_all
+   redirect_to complete_orders_path
  else
- render 'new'
+   render :new
  end
 end
 
@@ -59,12 +41,11 @@ end
 def index
   @orders = current_customer.orders
   @cart_items= CartItem.all  
- 
+  @orders = Order.page(params[:page]).per(5).reverse_order
 end
 
 def show
- @order_details=OrderDetail.all    
- @order=Order.find(params[:id])    
+
  
 end
 
