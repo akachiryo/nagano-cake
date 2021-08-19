@@ -10,6 +10,7 @@
               <% if admin_signed_in? %>
               <li class="nav-item"> <%= link_to "ログアウト（管理者用）", destroy_admin_session_path, method: :delete, class: 'nav-link text-dark list-group-item-action' %></li>
               <li class="nav-item"> <%= link_to "新規商品登録", new_admins_item_path,  class: 'nav-link text-dark list-group-item-action' %></li>
+            　<li class="nav-item"> <%= link_to "注文履歴一覧", admins_orders_path,  class: 'nav-link text-dark list-group-item-action' %></li>
               <% else %>
               <li class="nav-item"><%= link_to "ログイン（管理者用）", new_admin_session_path, class: 'nav-link text-dark list-group-item-action' %></li>
               <% end %>
