@@ -4,21 +4,17 @@ class OrdersController < ApplicationController
     @order = Order.new
     @customer = current_customer
   end
+  
+  def index
+    @orders = Order.all
+  end
+  
+  def show
+  end
 
   def confirm
-    
-    @order = Order.new(order_params)
-    
-    @cart_items = current_customer.cart_items
     @order = Order.new(order_params)
     @cart_items = current_customer.cart_items
-    @order.customer_id = current_customer.id
-    @order.postcode = current_customer.postcode
-    @order.address = current_customer.address
-    @order.name = current_customer.first_name
-    @order.total_payment = @cart_items.items_of_price
-    @order.delivery_fee = 800
-  
   end
   
   def create
@@ -29,6 +25,9 @@ class OrdersController < ApplicationController
     else
       render "/"
     end
+  end
+  
+  def complete
   end
 
   private

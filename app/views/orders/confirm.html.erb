@@ -34,6 +34,12 @@
        
      </div>
         <%= form_with model: @order, url: orders_path, method: :post, local: true do |f| %>
+        <%= f.hidden_field :customer_id, value: current_customer.id %>
+        <%= f.hidden_field :postcode, value: current_customer.postcode %>
+        <%= f.hidden_field :address, value: current_customer.address %>
+        <%= f.hidden_field :name, value: current_customer.first_name %>
+        <%= f.hidden_field :total_payment, value: @cart_items.items_of_price %>
+        <%= f.hidden_field :delivery_fee, value: 800 %>
         <%= f.submit '注文を確定する', class: "btn btn-outline-success" %>
         <% end %>
       
