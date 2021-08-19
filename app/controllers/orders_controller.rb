@@ -18,8 +18,8 @@ def confirm
 end
 
 def create 
- @order = Order.new
- @cart_items = CartItem.where(customer.id:current_customer.id)
+ @order = Order.new(order_params)
+ @cart_items = CartItem.where(customer_id:current_customer.id)
  if @order.save
  redirect_to complete_orders_path
  else
