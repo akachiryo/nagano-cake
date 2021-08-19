@@ -1,13 +1,27 @@
 class OrdersController < ApplicationController
     
 def new
-@order = Order.new
-@addresses = current_customer.addresses
+  @order = Order.new
+  @addresses = current_customer.addresses
 end
 
-
 def confirm
-  @order=Order.new(order_params)
+  @order = Order.new(order_params)
+  @curt_item = current_customer.curt_items
+  @order.customer_id = current_customer.id
+  if @order.address == 0
+    @order.postal_code = current_customer.postcode
+    @order.address = current_customer.address
+  elsif @order.address == 1
+  elsif @order.address == 2
+  end
+    
+  @order.shipping_cost = 800
+  @order.total_payment = shipping_cost + 
+  
+  
+  
+  
   @cart_items= CartItem.all  
   @cart_item=CartItem.new
   @order.customer_id=current_customer.id
