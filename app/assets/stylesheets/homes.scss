@@ -4,34 +4,51 @@
   font-family: 'Quicksand', sans-serif;
 }
 
-.message-content {
+/*トップページのメッセージ部分 */
+.welcome-messge {
+  display: inline-block;
   position: relative;
-  padding: 0.25em 1em;
-  border: solid 2px black;
-  border-radius: 3px 0 3px 0;
-  line-height : 1.8;
-  font-size: 1.1rem;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  padding: 0 30px;
+  font-size: 18px;
+  background: #f57a78;
+  color: #FFF;
+  box-sizing: border-box;
+  margin-bottom: 20px;
 }
 
-.message-content:before, .message-content:after {
-  content: '';
+.welcome-messge:before, .welcome-messge:after {
   position: absolute;
-  width:10px;
-  height: 10px;
-  border: solid 2px #ff006f;
-  border-radius: 50%;
+  content: '';
+  width: 0px;
+  height: 0px;
+  z-index: 1;
 }
 
-.message-content:after {
-  top:-12px;
-  left:-12px;
+.welcome-messge:after {
+  top: 0;
+  right: 0;
+  border-width: 25px 15px 25px 0px;
+  border-color: transparent #fff transparent transparent;
+  border-style: solid;
 }
 
-.message-content:before {
-  bottom:-12px;
-  right:-12px;
+.welcome-messge:before {
+　top: 0;
+  left: 0;
+  border-width: 25px 0px 25px 15px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
 }
 
+.welcome-message-content {
+  text-align: center;
+}
+
+
+/*  */
 .new-item {
   position: relative;
   font-size: 1.5rem;
