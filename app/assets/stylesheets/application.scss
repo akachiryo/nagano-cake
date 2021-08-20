@@ -18,6 +18,7 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
 
 
 header{
@@ -89,7 +90,7 @@ li {
 }
 
 .top-bg {
-  background-image: image-url("ec1.jpg");
+  background-image: image-url("top-image.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;

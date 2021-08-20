@@ -1,8 +1,6 @@
 
 
-.top-message, .new-item, .about-text {
-  font-family: 'Quicksand', sans-serif;
-}
+
 
 /*トップページのメッセージ部分 */
 .welcome-messge {
@@ -13,10 +11,11 @@
   text-align: center;
   padding: 0 30px;
   font-size: 18px;
-  background: #f57a78;
+  background: #3f2c3f;
   color: #FFF;
   box-sizing: border-box;
   margin-bottom: 20px;
+  font-family: 'Philosopher', sans-serif;
 }
 
 .welcome-messge:before, .welcome-messge:after {
@@ -45,6 +44,8 @@
 
 .welcome-message-content {
   text-align: center;
+
+  font-size: 1.1rem;
 }
 
 
@@ -52,7 +53,7 @@
 .new-item {
   position: relative;
   font-size: 1.5rem;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Philosopher', sans-serif;
 }
 
 .new-item:after {
@@ -64,6 +65,10 @@
   height: 5px;
   background: -webkit-repeating-linear-gradient(-45deg, #6ad1c8, #6ad1c8 2px, #fff 2px, #fff 4px);
   background: repeating-linear-gradient(-45deg, #6ad1c8, #6ad1c8 2px, #fff 2px, #fff 4px);
+}
+
+.items {
+  font-family: 'Philosopher', sans-serif;
 }
 
 .item-link {
