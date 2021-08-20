@@ -19,9 +19,12 @@ class Admins::OrdersController < ApplicationController
     end
     
     if @order.status == "入金確認"
-    @condition_order = @order.status == "入金確認"
+      @condition_order = @order.status == "入金確認"
     elsif @order.status == "製作中"
-    @condition_order = @order.status == "製作中"
+      @condition_order = @order.status == "製作中"
+    elsif @order.status == "発送済み"
+      @condition_order = @order.status == "発送済み"
+      
     end
   end
   
