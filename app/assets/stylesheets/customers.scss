@@ -1,3 +1,25 @@
-// Place all the styles related to the customers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.mypage-title, .mypage-edit-title {
+  position: relative;
+  padding: 0.25em 1em;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+}
+
+.mypage-title:before, .mypage-title:after,
+.mypage-edit-title:before, .mypage-edit-title:after {
+  content: '';
+  position: absolute;
+  top: -7px;
+  width: 2px;
+  height: -webkit-calc(100% + 14px);
+  height: calc(100% + 14px);
+  background-color: black;
+}
+
+.mypage-title:before, .mypage-edit-title:before {
+  left: 7px;
+}
+
+.mypage-title:after, .mypage-edit-title:after {
+  right: 7px;
+}

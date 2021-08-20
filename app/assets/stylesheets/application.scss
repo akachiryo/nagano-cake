@@ -21,6 +21,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
 
 
+*{
+  font-family: 'Klee One', cursive;
+}
+
 header{
   height: 100px;
 	background-image: image-url("cake_2_black.jpg");
@@ -95,11 +99,11 @@ li {
   background-repeat: no-repeat;
   min-height: 100vh;
 }
-.main-visual {
+.about-visual {
   background-image: image-url("cake_shop.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 500px;
+  height: 750px;
 
 }
 
@@ -119,3 +123,125 @@ li {
   transform: translateY(4px);
   border-bottom: none;
 }
+
+/* ログインフォーム */
+
+.login-form {
+  position: relative;
+  padding: 0.25em 1em;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+}
+
+.login-form:before, .login-form:after {
+  content: '';
+  position: absolute;
+  top: -7px;
+  width: 2px;
+  height: -webkit-calc(100% + 14px);
+  height: calc(100% + 14px);
+  background-color: black;
+}
+
+.login-form:before {
+  left: 7px;
+}
+
+.login-form:after {
+  right: 7px;
+}
+
+/* */
+
+.signup-link {
+  position: relative;
+  padding-left: 1.2em;
+  line-height: 1.4;
+  text-decoration: none;
+  color: black;
+  font-size: 1.1rem;
+
+}
+
+.signup-link:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f00c";
+  font-weight: 900;
+  position: absolute;
+  font-size: 1.4rem;
+  left: 0;
+  top: 0;
+  color: #ab0f50;
+
+}
+
+/*サインアップ用ボタン */
+
+.btn-signup {
+ display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+
+.btn-signup:active {
+   -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  border-bottom: none;
+}
+
+/*サインインへのリンク */
+
+.signin-link {
+  position: relative;
+  padding-left: 1.2em;
+  line-height: 1.4;
+  text-decoration: none;
+  color: black;
+  font-size: 1.1rem;
+
+}
+
+.signin-link:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f00c";
+  font-weight: 900;
+  position: absolute;
+  font-size: 1.4rem;
+  left: 0;
+  top: 0;
+  color: #ab0f50;
+}
+
+
+/* */
+
+.signup-form {
+  position: relative;
+  padding: 0.25em 1em;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+}
+
+.signup-form:before, .signup-form:after {
+  content: '';
+  position: absolute;
+  top: -7px;
+  width: 2px;
+  height: -webkit-calc(100% + 14px);
+  height: calc(100% + 14px);
+  background-color: black;
+}
+
+.signup-form:before {
+  left: 7px;
+}
+
+.signup-form:after {
+  right: 7px;
+}
+
+/**/

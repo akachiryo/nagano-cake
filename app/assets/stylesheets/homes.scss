@@ -1,6 +1,4 @@
-*{
-  font-family: 'Klee One', cursive;
-}
+
 
 /*トップページのメッセージ部分 */
 .welcome-messge {
@@ -51,6 +49,7 @@
 
 /*  */
 .new-item {
+  font-size: 20px;
   position: relative;
   font-size: 1.5rem;
   font-family: 'Philosopher', sans-serif;
@@ -91,6 +90,11 @@
   font-size: 1.1rem;
 }
 
+.plugin {
+  background-color: #000000;
+  min-height: 60vh;
+  margin-top: 50px;
+}
 
 
 
