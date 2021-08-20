@@ -1,6 +1,6 @@
 class Admins::OrdersController < ApplicationController
   
-  before_action :authenticate_!
+  before_action :authenticate_admin!
 
 def index
 end
