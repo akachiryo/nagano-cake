@@ -20,6 +20,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 
 
+*{
+  font-family: 'Klee One', cursive;
+}
+
 header{
   height: 100px;
 	background-image: image-url("cake_2_black.jpg");
@@ -35,7 +39,7 @@ header{
   .header-nav {
     display: inline-block;
   }
-  
+
   .nav-left {
     display: none;
   }
@@ -91,7 +95,7 @@ li {
 }
 
 .top-bg {
-  background-image: image-url("ec1.jpg");
+  background-image: image-url("ec3_monokuro.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
