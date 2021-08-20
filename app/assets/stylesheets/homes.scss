@@ -1,32 +1,97 @@
-.top-message, .new-item, .about-text {
-  font-family: 'Quicksand', sans-serif;
-}
-
-.message-content {
-  position: relative;
-  background: #dfefff;
-  box-shadow: 0px 0px 0px 5px #dfefff;
-  border: dashed 2px white;
-  padding: 0.2em 0.5em;
-  color: #454545;
-  line-height: 1.7;
-}
-
-.message-content:after {
-  position: absolute;
-  content: '';
-  left: -7px;
-  top: -7px;
-  border-width: 0 0 15px 15px;
-  border-style: solid;
-  border-color: #fff #fff #a8d4ff;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
-}
-
-.new-item {
-  font-size: 20px;
-}
-
 *{
   font-family: 'Klee One', cursive;
 }
+
+/*トップページのメッセージ部分 */
+.welcome-messge {
+  display: inline-block;
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  padding: 0 30px;
+  font-size: 18px;
+  background: #3f2c3f;
+  color: #FFF;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  font-family: 'Philosopher', sans-serif;
+}
+
+.welcome-messge:before, .welcome-messge:after {
+  position: absolute;
+  content: '';
+  width: 0px;
+  height: 0px;
+  z-index: 1;
+}
+
+.welcome-messge:after {
+  top: 0;
+  right: 0;
+  border-width: 25px 15px 25px 0px;
+  border-color: transparent #fff transparent transparent;
+  border-style: solid;
+}
+
+.welcome-messge:before {
+　top: 0;
+  left: 0;
+  border-width: 25px 0px 25px 15px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}
+
+.welcome-message-content {
+  text-align: center;
+
+  font-size: 1.1rem;
+}
+
+
+/*  */
+.new-item {
+  position: relative;
+  font-size: 1.5rem;
+  font-family: 'Philosopher', sans-serif;
+}
+
+.new-item:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background: -webkit-repeating-linear-gradient(-45deg, #6ad1c8, #6ad1c8 2px, #fff 2px, #fff 4px);
+  background: repeating-linear-gradient(-45deg, #6ad1c8, #6ad1c8 2px, #fff 2px, #fff 4px);
+}
+
+.items {
+  font-family: 'Philosopher', sans-serif;
+}
+
+.item-link {
+  margin-bottom: 70px;
+
+}
+
+.item-link a {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.7rem;
+  text-decoration: none;
+  color: black;
+  background: linear-gradient(transparent 70%, #ff006f 70%);
+}
+
+.about-text {
+  color: #fff;
+  margin-top: 20px;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+
+
+
+
