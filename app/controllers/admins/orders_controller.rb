@@ -8,21 +8,36 @@ class Admins::OrdersController < ApplicationController
   
   def show
     @order = Order.find(params[:id])
+    @order_details = @order.order_details
+    
+    @order_details.each do |order_detail| 
+      if order_detail.making_status == "製作不可"
+        @condition_detail = order_detail.making_status == "製作不可"
+      elsif @order.order_details.count == @order.order_details.where(making_status: 3).count
+        @condition_detail = order_detail.making_status == "製作完了"
+      end
+    end
+    
+    if @order.status == "入金確認"
+    @condition_order = @order.status == "入金確認"
+    elsif @order.status == "製作中"
+    @condition_order = @order.status == "製作中"
+    end
   end
+  
   
   def update
     @order = Order.find(params[:id])
-    @order.update(order_ststus_params)
-    redirect_to admins_order_path(@order)
+    @order_status = params[:order][:order_status].to_i
+    @order.update(status: @order_status)
     
+    if @order_status == 1
+      @order.order_details.each do |order_detail|
+        order_detail.update(making_status: 1)
+      end
+    end
+    redirect_to   admins_order_path(@order)
   end
-  
-  private
-  
-  def order_ststus_params
-        params.require(:order).permit(:customer_id, :postal_code, :address, :name, :shipping_cost, :total_payment, :payment_method, :status).merge(status: params[:order][:status].to_i)
-  end
-
 
 
 end    
