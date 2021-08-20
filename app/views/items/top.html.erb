@@ -20,8 +20,9 @@
     <div class="item_new">
         <% @items.each do |item| %>
         <div>
+          <div class="item-image_slide">
           <%= attachment_image_tag item, :image %>
-
+          </div>
           <!--<p>%= image_tag('sample-author1.jpg') %></p>-->
           <p>商品名：<%= item.name %></p>
           <p>金額：<%= item.price %></p>

@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     if resource_or_scope == :admin
       new_admin_session_path
     else
-        root_path
+      root_path
         #アドミ以外（会員）のログアウト後はルートへ
     end
   end

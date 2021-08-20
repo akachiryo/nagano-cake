@@ -12,8 +12,9 @@ Rails.application.routes.draw do
   registrations: 'admins/registrations'
  }
 
-  root 'items#top'
-  get '/about',to: 'items#about'
+  root 'homes#top'
+  get '/about',to: 'homes#about'
+  get '/search', to: 'searches#search'
 
   namespace :admins do
     resources :items, except: [:destroy]
@@ -48,4 +49,5 @@ Rails.application.routes.draw do
     end
 
     resources :addresses, except: [:show, :new]
+
 end
