@@ -16,6 +16,7 @@ end
 
 def create 
  @order = Order.new(order_params)
+
  @cart_items = current_customer.cart_items
  if @order.save
    @cart_items.each do |cart_item|
@@ -28,9 +29,12 @@ def create
    end
    @cart_items.destroy_all
    redirect_to complete_orders_path
+
  else
    render :new
  end
+ 
+ 
 end
 
 def complete
