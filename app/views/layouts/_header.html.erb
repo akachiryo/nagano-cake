@@ -18,7 +18,7 @@
           <% elsif admin_signed_in? %>
             <%= link_to ' 商品一覧 ', admins_items_path, class: "btn btn-outline-light nav-menu-text btn-sm" %>
             <%= link_to ' 会員一覧 ', admins_customers_path, class: "btn btn-outline-light nav-menu-text ms-4 btn-sm " %>
-            <%= link_to ' 注文履歴 ', admins_customers_path, class: "btn btn-outline-light nav-menu-text ms-4 btn-sm " %>
+            <%= link_to ' 注文履歴 ', admins_orders_path, class: "btn btn-outline-light nav-menu-text ms-4 btn-sm " %>
             <%= link_to ' ジャンル ', admins_genres_path, class: "btn btn-outline-light ms-4 btn-sm" %>
             <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: "btn btn-outline-light nav-menu-text ms-4 me-4 btn-sm" %>
             <%= form_with url: search_path, method: :get, local: true do |f| %>

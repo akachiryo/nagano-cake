@@ -36,12 +36,13 @@
         <% @order_details.each do |order_detail| %>  
           <tr>
             <td>
-              <%= order_detail.items.name %>
+              <%= order_detail.item.name %>
             </td>
-            <td><%= order_detail.price %></td>
+            <td><%= order_detail.item.price %></td>
             <td><%= order_detail.amount %></td>
               
-            <td><%= order_detail.item.price*item.amount %> </td>
+            <td><%= order_detail.price %>
+            </td>
           
           </tr>
         <% end %>
@@ -51,16 +52,19 @@
       <table class='table table-hover table-inverse '>
        <tbody>
           <tr>
-            <td>商品合計</td><td><%= @order.total_payment %></td>
+            <td>商品合計</td><td><%= @order.total_payment-800 %></td>
           </tr>
           <tr>
           <td>配送料</td><td><%= @order.shipping_cost %></td>
           </tr>
           <tr> 
-          <td>ご請求額</td><td><%= @order.total_payment + @order.shipping_cost %></td>
+          <td>ご請求額</td><td><%= @order.total_payment %></td>
           </tr>  
       </tbody>
       </table>
+      
+      
+      
     </div>
     </div>
   </div>
