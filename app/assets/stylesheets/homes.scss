@@ -1,36 +1,93 @@
-.top-message, .new-item, .about-text {
-  font-family: 'Quicksand', sans-serif;
-}
 
-.message-content {
+
+/*トップページのメッセージ部分 */
+.welcome-messge {
+  display: inline-block;
   position: relative;
-  padding: 0.25em 1em;
-  border: solid 2px black;
-  border-radius: 3px 0 3px 0;
-  line-height : 1.8;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  padding: 0 30px;
+  font-size: 18px;
+  background: #3f2c3f;
+  color: #FFF;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  font-family: 'Philosopher', sans-serif;
 }
 
-.message-content:before, .message-content:after {
-  content: '';
+.welcome-messge:before, .welcome-messge:after {
   position: absolute;
-  width:10px;
-  height: 10px;
-  border: solid 2px black;
-  border-radius: 50%;
+  content: '';
+  width: 0px;
+  height: 0px;
+  z-index: 1;
 }
 
-.message-content:after {
-  top:-12px;
-  left:-12px;
+.welcome-messge:after {
+  top: 0;
+  right: 0;
+  border-width: 25px 15px 25px 0px;
+  border-color: transparent #fff transparent transparent;
+  border-style: solid;
 }
 
-.message-content:before {
-  bottom:-12px;
-  right:-12px;
+.welcome-messge:before {
+　top: 0;
+  left: 0;
+  border-width: 25px 0px 25px 15px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
 }
 
+.welcome-message-content {
+  text-align: center;
+
+  font-size: 1.1rem;
+}
+
+
+/*  */
 .new-item {
   font-size: 20px;
+  position: relative;
+  font-size: 1.5rem;
+  font-family: 'Philosopher', sans-serif;
+}
+
+.new-item:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background: -webkit-repeating-linear-gradient(-45deg, #6ad1c8, #6ad1c8 2px, #fff 2px, #fff 4px);
+  background: repeating-linear-gradient(-45deg, #6ad1c8, #6ad1c8 2px, #fff 2px, #fff 4px);
+}
+
+.items {
+  font-family: 'Philosopher', sans-serif;
+}
+
+.item-link {
+  margin-bottom: 70px;
+
+}
+
+.item-link a {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.7rem;
+  text-decoration: none;
+  color: black;
+  background: linear-gradient(transparent 70%, #ff006f 70%);
+}
+
+.about-text {
+  color: #fff;
+  margin-top: 20px;
+  line-height: 1.7;
+  font-size: 1.1rem;
 }
 
 
