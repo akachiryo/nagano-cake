@@ -1,0 +1,30 @@
+<div class='top-bg px-5 px-sm-0'>
+
+
+
+      <div class="top-message d-flex align-items-center justify-content-center" style="height:300px;">
+
+        <p class="message-content">
+          ようこそ、ながのCAKEへ！<br>
+          このサイトは、ケーキ販売のECサイトになります。<br>
+          会員でない方も商品の閲覧はできますが、<br>
+          購入には会員登録が必要になります。<br>
+        </p>
+      </div>
+
+      <div class="item-image-slide">
+        <% @items.each do |item| %>
+          <div class="slide-item">
+            <%= attachment_image_tag item, :image, class:'sample-image'%>
+          </div>
+        <% end %>
+      </div>
+
+
+
+      <p class="new-item my-3">新着商品</p>
+      <%= link_to '全ての商品を見る>',items_path %>
+
+
+  </div>
+</div>

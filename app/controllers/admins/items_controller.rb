@@ -1,4 +1,7 @@
 class Admins::ItemsController < ApplicationController
+  
+  before_action :authenticate_admin!
+  
   def top
   end
   
@@ -9,6 +12,7 @@ class Admins::ItemsController < ApplicationController
   def new
     @item = Item.new
     @genres = Genre.all
+    
   end
   
   def show

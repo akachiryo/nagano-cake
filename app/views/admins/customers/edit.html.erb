@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="col-3">
+    <p class="fs-5 bg-light text-center mt-3" valign="middle"><%= @customer.last_name + @customer.first_name %>さんの会員情報編集</p>
+  </div>
+  <div class="row">
+    <div class="col-10">
+      
+      <%= form_with model: @customer,url: admins_customer_path(@customer) , local: true do |f| %>
+      <div class="row lh-lg">
+        <p class="col-2">会員ID</p>
+        <p class="col-3"><%= @customer.id %></p>
+      </div>
+      <div class="row lh-lg">
+        <p class="col-2">氏名</p>
+        <p class="col-3"><%= f.text_field :last_name,:size=>"30", autofocus: true %></p>
+        <p class="col-3"><%= f.text_field :first_name,:size=>"30" %></p>
+      </div>
+      <div class="row lh-lg">
+        <p class="col-2">フリガナ</p>
+        <p class="col-3"><%= f.text_field :last_name_kana,:size=>"30" %></p>
+        <p class="col-3"><%= f.text_field :first_name_kana,:size=>"30" %></p>
+      </div>
+      <div class="row lh-lg">
+        <p class="col-2">郵便番号</p>
+        <p class="col-3"><%= f.text_field :postcode,:size=>"30" %></p>
+      </div>
+      <div class="row lh-lg">
+        <p class="col-2">住所</p>
+        <p class="col-3"><%= f.text_field :address,:size=>"100" %></p>
+      </div>
+      <div class="row lh-lg">
+        <p class="col-2">電話番号</p>
+        <p class="col-3"><%= f.telephone_field :phone_number,:size=>"30" %></p>
+      </div>
+      <div class="row lh-lg">
+        <p class="col-2">メールアドレス</p>
+        <p class="col-3"><%= f.email_field :email,:size=>"30" %></p>
+      </div>
+      <div class="row lh-lg">
+        <p class="col-2">会員ステータス</p>
+        <p class="col-1"><%= f.radio_button :is_deleted, false %><%= f.label :is_deleted, "有効" %></p>
+        <p class="col-1"><%= f.radio_button :is_deleted, true %><%= f.label :is_deleted, "退会" %></p>
+      </div>
+      <div class="row lh-lg mt-3">
+        <p class="col-2"></p>
+        <p class="col-2"><%= f.submit "変更を保存", class: "btn btn-success px-3 py-2" %></p>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

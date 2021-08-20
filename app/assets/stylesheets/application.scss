@@ -17,10 +17,49 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+
+
+header{
+  height: 100px;
+	background-image: image-url("cake_2_black.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+.header-nav {
+  display: none;
+}
+
+@media screen and (max-width: 765px) {
+  .header-nav {
+    display: inline-block;
+  }
+  
+  .nav-left {
+    display: none;
+  }
+}
+
+footer{
+  height: 100px;
+	background-image: image-url("cake_2_black.jpg");
+	background-size: cover;
+	background-position: bottom;
+}
+
+li {
+  list-style: none;
+}
+
+.footer-bottom{
+  font-size: 13px;
+}
 
 
 .item_new{
   display:flex;
+  flex-wrap:wrap;
 }
 
 .main-visual {
@@ -29,4 +68,31 @@
   background-image: url(img/apple-pie-5479993_1920.jpg);
   background-size: cover; /* 縦横比を維持したまま背景領域を埋め尽くす */
   background-position: center; /* 背景画像を中央に配置 */
+}
+
+
+
+.item_visual{
+  background-size: cover; /* 縦横比を維持したまま背景領域を埋め尽くす */
+  background-position: center; /* 背景画像を中央に配置 */
+  height: 200px;
+  margin:10px;
+}
+
+.item_amount{
+  margin:10px;
+}
+
+
+
+.sample-image {
+  height: 400px;
+  width :100%;
+}
+
+.top-bg {
+  background-image: image-url("ec3_monokuro.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
