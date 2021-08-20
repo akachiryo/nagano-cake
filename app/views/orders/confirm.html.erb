@@ -25,12 +25,27 @@
       </table>
       <div class="row">
         <p class="col-2">支払い方法</p>
-        <p class="col-2"><%= @order[:payment] %></p>
+        <p class="col-2"><%= @order.payment_method %></p>
       </div> 
       <div class="row">
         <p class="col-2">お届け先</p>
-        <p class="col-2"><%= @order[:payment] %></p>
+        <p class="col-2">〒<%= @delivery_postcode %><%= @delivery_location %></p>
+        <p class="lh-1 mt-2"><%= @delivery_name %></p>
       </div>
+      
+      <table class='table table-hover table-inverse '>
+        <tbody>
+            <tr valign="middle" class="lh-lg">
+              <td>配送料</td><td><%= @order.shipping_cost %></td>
+            </tr>
+            <tr valign="middle" class="lh-lg">
+              <td>商品合計</td><td><%= @cart_items.items_of_price %></td>
+            </tr>
+            <tr valign="middle" class="lh-lg">
+              <td>ご請求額</td><td><%= @total_payment %></td>
+            </tr>
+        </tbody>
+      </table>
          
       <div class="hidden_field">
         <%= form_with model: @order, url: orders_path, method: :post, local: true do |f| %>
