@@ -11,7 +11,7 @@ def confirm
   @order.customer_id = current_customer.id
   @order.shipping_cost = 800
   @total_payment = @order.shipping_cost + @cart_items.items_of_price
-  @registered_address = Address.where(id: current_customer.id)
+  @registered_address = Address.where(customer_id: current_customer.id)
 end
 
 def create 

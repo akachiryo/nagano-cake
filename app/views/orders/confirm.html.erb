@@ -29,7 +29,7 @@
       </div> 
       <div class="row">
         <p class="col-2">お届け先</p>
-        <p class="col-2"><%= @order[:payment] %></p>
+        <p class="col-2"><%= @registered_address.pluck(:postcode).slice!(0) %><%=@registered_address.pluck(:address).slice!(0) %><%=@registered_address.pluck(:name).slice!(0)  %></p>
       </div>
          
       <div class="hidden_field">
