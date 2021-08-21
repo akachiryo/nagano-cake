@@ -58,9 +58,8 @@ def complete
 end
 
 def index
-  @orders = current_customer.orders
-  @cart_items= CartItem.all
-  @orders = Order.page(params[:page]).per(5).reverse_order
+  @cart_items= CartItem.all  
+  @orders = current_customer.orders.page(params[:page]).per(5).reverse_order
 end
 
 def show
