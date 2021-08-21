@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  
+  before_action :authenticate_customer!
 
   def top
     @items = Item.all
@@ -17,6 +19,4 @@ class ItemsController < ApplicationController
     @items = Item.page(params[:page]).reverse_order
   end
   
-  
-
 end

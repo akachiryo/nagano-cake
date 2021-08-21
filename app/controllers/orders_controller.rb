@@ -12,6 +12,7 @@ def confirm
   @order.shipping_cost = 800
   @total_payment = @order.shipping_cost + @cart_items.items_of_price
   @registered_address = Address.where(customer_id: current_customer.id)
+
   
     if params[:delivery_address] == "0" 
           @delivery_postcode=current_customer.postcode
@@ -26,7 +27,7 @@ def confirm
           @delivery_location= @order.address
            @delivery_name=  @order.name
     end
-    
+
 end
 
 def create 
