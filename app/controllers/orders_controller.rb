@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-    
+
 def new
   @order = Order.new
   @addresses = current_customer.addresses
@@ -12,24 +12,24 @@ def confirm
   @order.shipping_cost = 800
   @total_payment = @order.shipping_cost + @cart_items.items_of_price
   @registered_address = Address.where(customer_id: current_customer.id)
-  
-    if params[:delivery_address] == "0" 
+
+    if params[:delivery_address] == "0"
           @delivery_postcode=current_customer.postcode
           @delivery_location= current_customer.address
           @delivery_name= current_customer.full_name
-    elsif params[:delivery_address] == "1" 
+    elsif params[:delivery_address] == "1"
            @delivery_postcode=@registered_address.pluck(:postcode).slice!(0)
            @delivery_location= @registered_address.pluck(:address).slice!(0)
            @delivery_name=@registered_address.pluck(:name).slice!(0)
-    elsif params[:delivery_address] == "2" 
+    elsif params[:delivery_address] == "2"
            @delivery_postcode= @order.postal_code
           @delivery_location= @order.address
            @delivery_name=  @order.name
     end
-    
+
 end
 
-def create 
+def create
  @order = Order.new(order_params)
 
  @cart_items = current_customer.cart_items
@@ -48,8 +48,8 @@ def create
  else
    render :new
  end
- 
- 
+
+
 end
 
 def complete
@@ -59,7 +59,7 @@ end
 
 def index
   @orders = current_customer.orders
-  @cart_items= CartItem.all  
+  @cart_items= CartItem.all
   @orders = Order.page(params[:page]).per(5).reverse_order
 end
 
@@ -78,5 +78,5 @@ def order_params
 end
 
 
-    
+
 end
