@@ -29,9 +29,15 @@
             <% end %>
           <% else %>
             <%= link_to '　 About　 ',about_path,class: "btn btn-outline-light btn-sm" %>
-            <%= link_to ' 商品一覧 ',admins_items_path,class: "btn btn-outline-light ms-4 btn-sm" %>
+            <%= link_to ' 商品一覧 ',items_path,class: "btn btn-outline-light ms-4 btn-sm" %>
             <%= link_to ' 新規登録 ', new_customer_registration_path,class: "btn btn-outline-light ms-4 btn-sm" %>
             <%= link_to ' ログイン ', new_customer_session_path,class: "btn btn-outline-light ms-4 btn-sm" %>
+            <%= form_with url: search_path, method: :get, local: true do |f| %>
+              <%= f.text_field :content %>
+              <%= f.select :model, options_for_select({ "商品" => "item", "ジャンル" => "genre"}) %>
+              <%= f.select :method, options_for_select({ "完全に一致" => "perfect", "部分一致" => "partical"}) %>
+              <%= f.submit "検索" %>
+            <% end %>
           <% end %>
         </div>
         <nav class="navbar navbar-dark bg-dark header-nav mt-0" media="screen and (max-width: 480px)">
