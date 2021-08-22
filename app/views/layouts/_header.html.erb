@@ -5,22 +5,24 @@
       <%= link_to image_tag("logo.png", size: "150x50"), root_path, class: "image mt-2" %>
         <div class="navbar mt-4 nav-left" id="navbarToggleExternalContent">
           <% if customer_signed_in? %>
-            <%= link_to 'マイページ', customer_path, class: "btn btn-outline-light nav-menu-text btn-sm " %>
-            <%= link_to ' 商品一覧 ',items_path, class: "btn btn-outline-light nav-menu-text ms-4 btn-sm" %>
-            <%= link_to '　カート　', cart_items_path, class: "btn btn-outline-light ms-4 btn-sm" %>
-            <%= link_to 'ログアウト', destroy_customer_session_path, method: :delete, class: "btn btn-outline-light nav-menu-text ms-4 me-4 btn-sm" %>
-            <%= form_with url: search_path, method: :get, local: true do |f| %>
+            <%= link_to 'My Page', customer_path, class: "btn btn-outline-light nav-menu-text btn-sm offset-1" %>
+            <%= link_to ' Items ',items_path, class: "btn btn-outline-light nav-menu-text ms-4 btn-sm" %>
+            <%= link_to '　Cart　', cart_items_path, class: "btn btn-outline-light ms-4 btn-sm" %>
+            <%= link_to 'Log out', destroy_customer_session_path, method: :delete, class: "btn btn-outline-light nav-menu-text ms-4 me-4 btn-sm" %>
+            <%= form_with url: search_path, method: :get, class: "search-form", local: true do |f| %>
               <%= f.text_field :content %>
               <%= f.select :model, options_for_select({ "商品" => "item", "ジャンル" => "genre"}) %>
               <%= f.select :method, options_for_select({ "完全に一致" => "perfect", "部分一致" => "partical"}) %>
-              <%= f.submit "検索" %>
+              <button type="submit" name="commit" value="検索" id="search-btn">
+                <i class="fas fa-search"></i>
+              </button>
             <% end %>
           <% elsif admin_signed_in? %>
-            <%= link_to ' 商品一覧 ', admins_items_path, class: "btn btn-outline-light nav-menu-text btn-sm" %>
-            <%= link_to ' 会員一覧 ', admins_customers_path, class: "btn btn-outline-light nav-menu-text ms-4 btn-sm " %>
-            <%= link_to ' 注文履歴 ', admins_orders_path, class: "btn btn-outline-light nav-menu-text ms-4 btn-sm " %>
-            <%= link_to ' ジャンル ', admins_genres_path, class: "btn btn-outline-light ms-4 btn-sm" %>
-            <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: "btn btn-outline-light nav-menu-text ms-4 me-4 btn-sm" %>
+            <%= link_to ' Items ', admins_items_path, class: "btn btn-outline-light nav-menu-text btn-sm" %>
+            <%= link_to ' Members ', admins_customers_path, class: "btn btn-outline-light nav-menu-text ms-4 btn-sm " %>
+            <%= link_to ' Orders ', admins_orders_path, class: "btn btn-outline-light nav-menu-text ms-4 btn-sm " %>
+            <%= link_to ' Genle ', admins_genres_path, class: "btn btn-outline-light ms-4 btn-sm" %>
+            <%= link_to 'Log out', destroy_admin_session_path, method: :delete, class: "btn btn-outline-light nav-menu-text ms-4 me-4 btn-sm" %>
             <%= form_with url: search_path, method: :get, local: true do |f| %>
               <%= f.text_field :content,class: "form-control me-2", size: "10"  %>
               <%= f.select :model, options_for_select({ "商品" => "item", "会員" => "customer"}) %>
@@ -29,14 +31,18 @@
             <% end %>
           <% else %>
             <%= link_to '　 About　 ',about_path,class: "btn btn-outline-light btn-sm" %>
-            <%= link_to ' 商品一覧 ',items_path,class: "btn btn-outline-light ms-4 btn-sm" %>
-            <%= link_to ' 新規登録 ', new_customer_registration_path,class: "btn btn-outline-light ms-4 btn-sm" %>
-            <%= link_to ' ログイン ', new_customer_session_path,class: "btn btn-outline-light ms-4 btn-sm" %>
-            <%= form_with url: search_path, method: :get, local: true do |f| %>
+
+            <%= link_to ' Items ',items_path,class: "btn btn-outline-light ms-4 btn-sm" %>
+            <%= link_to ' Sign Up ', new_customer_registration_path,class: "btn btn-outline-light ms-4 btn-sm" %>
+            <%= link_to ' Log in ', new_customer_session_path,class: "btn btn-outline-light ms-4 btn-sm" %>
+            <%= form_with url: search_path, method: :get, class: "search-form", local: true do |f| %>
               <%= f.text_field :content %>
               <%= f.select :model, options_for_select({ "商品" => "item", "ジャンル" => "genre"}) %>
               <%= f.select :method, options_for_select({ "完全に一致" => "perfect", "部分一致" => "partical"}) %>
-              <%= f.submit "検索" %>
+              <button type="submit" name="commit" id="search-btn" value="検索">
+                <i class="fas fa-search"></i>
+              </button>
+
             <% end %>
           <% end %>
         </div>

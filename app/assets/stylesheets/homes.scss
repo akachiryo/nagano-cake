@@ -68,6 +68,11 @@
 
 .items {
   font-family: 'Philosopher', sans-serif;
+  transition: all 0.8s;
+}
+
+.items:hover {
+  font-size: 30px;
 }
 
 .item-link {
