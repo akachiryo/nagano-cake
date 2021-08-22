@@ -64,7 +64,60 @@ li {
 
 .item_new{
   display:flex;
-  flex-wrap:wrap;
+}
+
+
+
+.item_photo{
+  background-size: cover; /* 縦横比を維持したまま背景領域を埋め尽くす */
+  background-position: center; /* 背景画像を中央に配置 */
+  margin:10px;
+  height:300px;
+}
+
+.item_name{
+  text-align: center;
+}
+
+
+
+ul li {
+        display: flex;
+        align-items: center;
+    }
+
+ ul li .item_photo,
+    ul li .item_text {
+        width: 50%;
+        box-sizing: border-box;
+    }
+
+
+
+.item_icon img{
+  border: solid 10px #f0f0f0;
+}
+ 
+.item_photo img{
+  border: solid 10px #f0f0f0;
+} 
+
+.item_image img{
+  border: solid 10px #f0f0f0;
+}   
+
+.cp_hr01 {
+	border-width: 1px 0 0 0;
+	border-style: solid;
+	border-color: #000000;
+}
+
+.item_index_thema{
+  margin-top:20px;
+}
+
+.item_detail_text{
+ margin-top:20px; 
 }
 
 .main-visual {
@@ -80,13 +133,15 @@ li {
 .item_visual{
   background-size: cover; /* 縦横比を維持したまま背景領域を埋め尽くす */
   background-position: center; /* 背景画像を中央に配置 */
-  height: 200px;
+  height: 300px;
   margin:10px;
 }
 
 .item_amount{
   margin:10px;
 }
+
+
 
 .sample-image {
   height: 400px;
