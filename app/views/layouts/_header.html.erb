@@ -27,7 +27,9 @@
               <%= f.text_field :content,class: "form-control me-2", size: "10"  %>
               <%= f.select :model, options_for_select({ "商品" => "item", "会員" => "customer"}) %>
               <%= f.select :method, options_for_select({ "完全に一致" => "perfect", "部分一致" => "partical"}) %>
-              <%= f.submit "検索", class: "btn btn-outline-light" %>
+              <button type="submit" name="commit" value="検索" id="search-btn">
+                <i class="fas fa-search"></i>
+              </button>
             <% end %>
           <% else %>
             <%= link_to '　 About　 ',about_path,class: "btn btn-outline-light btn-sm" %>
