@@ -112,7 +112,7 @@ li {
   height: 500px;
   background-image: image-url("cake-1914463_1280.jpg");
   background-size: cover;
-  background-position: center; 
+  background-position: center;
 }
 
 /*ログインボタン */
@@ -252,4 +252,17 @@ li {
   right: 7px;
 }
 
-/**/
+/*検索ボタン*/
+
+#search-btn {
+ color: #de3400;  /* 虫眼鏡の色*/
+ background-color: #fff;
+}
+
+#search-btn i{
+  width: 1.5rem;
+}
+
+.search-form {
+  margin-left: 15px;
+}
