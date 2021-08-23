@@ -8,6 +8,9 @@
             Welcome To Nagano Cake！<br>
           </div>
           <div class="welcome-message-content">
+            <% if current_customer.present? %>
+              <%= current_customer.last_name %> 様<br>
+            <% end %>
             洋菓子専門店ながのCakeにようこそ<br>
             会員でない方も商品の閲覧はできますが<br>
             購入には会員登録が必要になります<br>
