@@ -1,2 +1,10 @@
-<h2>ご注文ありがとうございました!</h2>
-<%= link_to '注文履歴一覧',orders_path %>
+<div class="container orders_complete top-bg">
+  <div class="row">
+    <div class="d-flex align-items-center justify-content-center">
+      <h3 class="thanks_message">ご注文ありがとうございました!</h3>
+    </div>
+  </div>
+  <div class="mt-5 ms-5">
+    <%= link_to '注文履歴一覧へ', orders_path, class:"btn btn-secondary" %>
+  </div>
+</div>

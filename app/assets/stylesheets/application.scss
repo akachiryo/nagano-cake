@@ -97,14 +97,14 @@ ul li {
 .item_icon img{
   border: solid 10px #f0f0f0;
 }
- 
+
 .item_photo img{
   border: solid 10px #f0f0f0;
-} 
+}
 
 .item_image img{
   border: solid 10px #f0f0f0;
-}   
+}
 
 .cp_hr01 {
 	border-width: 1px 0 0 0;
@@ -117,7 +117,7 @@ ul li {
 }
 
 .item_detail_text{
- margin-top:20px; 
+ margin-top:20px;
 }
 
 .main-visual {
@@ -324,3 +324,40 @@ ul li {
 .search-form {
   margin-left: 15px;
 }
+
+/*各ページのページタイトルを交差線で囲む */
+.page-title {
+  position: relative;
+  padding: 0.25em 1em;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+}
+
+.page-title:before, .page-title:after {
+  content: '';
+  position: absolute;
+  top: -7px;
+  width: 2px;
+  height: -webkit-calc(100% + 14px);
+  height: calc(100% + 14px);
+  background-color: black;
+}
+
+.page-title:before {
+  left: 7px;
+}
+
+.page-title:after {
+  right: 7px;
+}
+
+/*cart-items-index */
+
+.cart-items-index {
+  margin-top: 50px;
+  margin-bottom: 300px;
+}
+
+/* */
+
+

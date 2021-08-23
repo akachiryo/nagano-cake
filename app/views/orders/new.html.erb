@@ -1,9 +1,9 @@
-<div class='container px-5 px-sm-0'>
+<div class='container px-5 px-sm-0 mt-5 mb-5'>
   <div class='row'>
   <div class='col-md-7'></div>
   <div class='col-md-11 offset-md-1'>
     <%= form_with(model: @order, url: confirm_orders_path, method: :post, local: true) do |f| %>
-    <div class="payment"> 
+    <div class="payment">
       <h3>支払い方法</h3>
       <%= f.radio_button :payment_method, :クレジットカード, checked: true %>
       <%= f.label :payment_method, "クレジットカード", value: :クレジットカード %>
@@ -41,8 +41,8 @@
           <%= f.text_field :name %>
         </div>
       </div>
-      <%= f.submit "確認画面に進む", class: "btn btn-sm btn-success" %>
-      </div>  
+      <%= f.submit "確認画面に進む", class: "btn btn-sm btn-success mt-3" %>
+      </div>
       <% end %>
     </div>
   </div>
