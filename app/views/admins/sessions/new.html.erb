@@ -1,4 +1,4 @@
-<div class="container position-relative">
+<div class="container position-relative admin-session">
   <div class="mt-5 ms-5">
     <span class="bg-light">　管理者ログイン　</span>
   </div>
@@ -8,13 +8,13 @@
       <%= f.label :email, "メールアドレス", class: "col-2" %>
       <%= f.email_field :email, autocomplete: "email", placeholder: "sample@example.com", class: "col-5" %>
     </div>
-    
+
     <div class="row justify-content-center mt-3">
       <%= f.label :password, "パスワード", class: "col-2" %>
       <%= f.password_field :password, autocomplete: "current-password", class: "col-5" %>
     </div>
 
-    <div class="row justify-content-center mt-5">
+    <div class="row justify-content-center mt-5 mb-5">
       <%= f.submit "　ログイン　", class: "btn btn-primary col-2" %>
       <div class="col-1"></div>
     </div>
