@@ -20,7 +20,7 @@
           <%= attachment_image_tag item, :image,class:'item_photo' %>
           <div class="item_text">
           <p class="item_name">商品名：<%= item.name %></p>
-          <p class="item_name">金額：¥<%= item.price %>(税込)<br>
+          <p class="item_name">金額：¥<%= item.price.round.to_s(:delimited) %>(税込)<br>
           <%= link_to "商品詳細" ,item_path(item),class:'btn btn-signup  mt-4' %></p>
           </div>
           
