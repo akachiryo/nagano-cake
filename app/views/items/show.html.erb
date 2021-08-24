@@ -12,7 +12,7 @@
             <div class="item_text item_detail_text">
               <h2><%= @item.name %></h2>
               <p><%= @item.introduction %></p>
-              <p><h2>¥<%= @item.price %></h2>(税込)</p>
+              <p><h2>¥<%= @item.price.round.to_s(:delimited) %></h2>(税込)</p>
                <div class='row'>
                 <div class="item_amount">
                  <%= form_with model: @cart_item, local:true do |f| %>
