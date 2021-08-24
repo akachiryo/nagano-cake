@@ -19,6 +19,9 @@
     <%= render 'layouts/header' %>
 
     <main>
+    <% if flash[:notice] %>
+      <div class="flash mt-2"><%= flash[:notice] %></div>
+    <% end %>
     <%= yield %>
     </main>
     <%= render 'layouts/footer' %>
