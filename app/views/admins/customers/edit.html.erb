@@ -1,10 +1,10 @@
 <div class="container">
   <div class="col-3">
-    <p class="fs-5 bg-light text-center mt-3" valign="middle"><%= @customer.last_name + @customer.first_name %>さんの会員情報編集</p>
+    <p class="fs-5 bg-light text-center mt-3" valign="middle"><%= @customer.last_name + @customer.first_name %>さんの<br>会員情報編集</p>
   </div>
   <div class="row">
     <div class="col-10">
-      
+
       <%= form_with model: @customer,url: admins_customer_path(@customer) , local: true do |f| %>
       <div class="row lh-lg">
         <p class="col-2">会員ID</p>
