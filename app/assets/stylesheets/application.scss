@@ -32,6 +32,11 @@
   font-family: 'Klee One', cursive;
 }
 
+main{
+  position: relative;
+  
+}
+
 header{
   height: 100px;
 	background-image: image-url("cake_2_black.jpg");
@@ -58,6 +63,9 @@ footer{
 	background-image: image-url("cake_2_black.jpg");
 	background-size: cover;
 	background-position: bottom;
+ position: absolute;/*←絶対位置*/
+    bottom: 0; /*下に固定*/
+
 }
 
 li {
@@ -516,3 +524,24 @@ ul li {
   color: #b6195d;
 }
 
+
+
+.item-show {
+  margin-top: 75px;
+}
+
+.admin-session {
+  margin-bottom: 300px;
+}
+
+.order-index {
+  margin-bottom: 400px;
+}
+
+.order-show, .item-index {
+  margin-bottom: 200px;
+}
+
+.customer-index {
+  margin-bottom: 325px;
+}

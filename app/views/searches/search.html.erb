@@ -1,5 +1,5 @@
 <% if @model == "item" %>
-<div class="text-center">
+<div class="text-center item-show">
     <h2>商品"<%= @content %>"(全<%= @records.count %>件)</h2>
 </div>
 <div class="container">
@@ -35,7 +35,7 @@
 </div>
 
 <% elsif @model == "genre" %>
-<div class="text-center">
+<div class="text-center item-show">
     <h2>ジャンル"<%= @content %>"(全<%= @records_genre.count %>件)</h2>
 </div>
 <div class="container">
@@ -73,7 +73,7 @@
 
 
 <% elsif @model == "customer"  %>
-  <div class="container">
+  <div class="container item-show">
   <div class="row mt-4">
     <div class="row col-8">
       <p class="col-2"></p>
